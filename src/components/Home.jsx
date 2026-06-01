@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { fmt, fmtDate, fmtTime, pct } from '../utils/format'
 import AddExpenseModal from './AddExpenseModal'
 import { Plus, TrendingDown, TrendingUp, Calendar } from 'lucide-react'
+import CatBanner from "./CatBanner";
 
 export default function Home({ store, haptic }) {
   const [showAdd, setShowAdd] = useState(false)
@@ -30,6 +31,8 @@ export default function Home({ store, haptic }) {
   return (
     <div className="page-scroll">
       <div className="page-inner" style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
+
+      <CatBanner />
 
         {/* Header */}
         <div style={{ paddingTop: 8 }}>
