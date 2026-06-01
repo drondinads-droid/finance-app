@@ -132,7 +132,7 @@ function AddCompModal({ store, haptic, onClose }) {
 
         {monthly > 0 && (
           <div style={{
-            background: 'var(--accent-dim)', border: '1px solid rgba(221,184,202,0.18)',
+            background: 'var(--accent-dim)', border: '1px solid rgba(184,255,101,0.2)',
             borderRadius: 'var(--radius-sm)', padding: '12px 14px', marginBottom: 16,
           }}>
             <div style={{ fontSize: 12, color: 'var(--text3)' }}>Ежемесячная нагрузка</div>

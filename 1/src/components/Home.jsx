@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
 import { fmt, fmtDate, fmtTime, pct } from '../utils/format'
 import AddExpenseModal from './AddExpenseModal'
-import CatBanner from './CatBanner'
 import { Plus, TrendingDown, TrendingUp, Calendar } from 'lucide-react'
+import CatBanner from "./CatBanner";
 
 export default function Home({ store, haptic }) {
   const [showAdd, setShowAdd] = useState(false)
@@ -15,36 +15,6 @@ export default function Home({ store, haptic }) {
   const dailyPct = dailyLimit > 0 ? pct(Math.max(0, dailyLimit - dailyLeft), dailyLimit) : 0
   const isBudgetAlert = monthPct > 0.85
   const isDailyAlert = dailyLeft < 0
-
-  const catMood = !budgetSet
-    ? {
-        emoji: '🐾',
-        title: 'Кошка ждёт ваш бюджет',
-        text: 'Укажите месячный бюджет в настройках, и я начну считать лимиты и дни до пополнения.',
-      }
-    : monthPct >= 0.95
-      ? {
-          emoji: '🙀',
-          title: 'Осторожно, бюджет почти закончился',
-          text: 'Кошка советует немного притормозить и проверить лишние траты.',
-        }
-      : monthPct >= 0.8
-        ? {
-            emoji: '😿',
-            title: 'Почти финиш',
-            text: 'Осталось совсем немного бюджета — лучше тратить аккуратнее.',
-          }
-        : monthPct >= 0.5
-          ? {
-              emoji: '😺',
-              title: 'Всё под контролем',
-              text: 'Ты идёшь по бюджету спокойно, кошка довольна.',
-            }
-          : {
-              emoji: '😻',
-              title: 'Отличный старт',
-              text: 'Кошка рада: месяц начинается очень бережно.',
-            }
 
   function getCat(id) {
     return categories.find(c => c.id === id) || { emoji: '📦', name: 'Прочее' }
@@ -62,20 +32,7 @@ export default function Home({ store, haptic }) {
     <div className="page-scroll">
       <div className="page-inner" style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
 
-        <CatBanner />
-
-        <div className="card card-p fade-in cat-mood-card">
-          <div className="cat-avatar">{catMood.emoji}</div>
-          <div style={{ flex: 1, minWidth: 0 }}>
-            <div className="label">Настроение кошки</div>
-            <div style={{ fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: 18, marginTop: 4 }}>
-              {catMood.title}
-            </div>
-            <div style={{ fontSize: 13, color: 'var(--text2)', marginTop: 6, lineHeight: 1.45 }}>
-              {catMood.text}
-            </div>
-          </div>
-        </div>
+      <CatBanner />
 
         {/* Header */}
         <div style={{ paddingTop: 8 }}>

@@ -129,7 +129,7 @@ export default function Analytics({ store }) {
 
             {/* Tip */}
             {wantPct > 30 && (
-              <div className="card card-p" style={{ background: 'var(--yellow-dim)', border: '1px solid rgba(216,179,107,0.18)' }}>
+              <div className="card card-p" style={{ background: 'var(--yellow-dim)', border: '1px solid rgba(255,204,68,0.2)' }}>
                 <div style={{ fontSize: 13, color: 'var(--yellow)' }}>
                   💡 <strong>{wantPct}%</strong> расходов — ненужные траты ({fmt(wantSpent, currency)}).
                   Сократив их на половину, вы сэкономите {fmt(wantSpent / 2, currency)}.

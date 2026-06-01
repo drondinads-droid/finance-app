@@ -137,7 +137,7 @@ export default function Settings({ store, haptic }) {
               <Trash2 size={16} /> Сбросить все данные
             </button>
           ) : (
-            <div className="card card-p" style={{ background: 'var(--red-dim)', border: '1px solid rgba(217,123,138,0.24)' }}>
+            <div className="card card-p" style={{ background: 'var(--red-dim)', border: '1px solid rgba(255,95,109,0.3)' }}>
               <div style={{ display: 'flex', gap: 8, alignItems: 'flex-start', marginBottom: 14 }}>
                 <AlertTriangle size={18} color="var(--red)" style={{ flexShrink: 0, marginTop: 1 }} />
                 <div style={{ fontSize: 14, color: 'var(--red)' }}>
